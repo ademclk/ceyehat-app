@@ -1,4 +1,8 @@
+import 'package:ceyehat_app/core/base/state/state_x.dart';
+import 'package:ceyehat_app/core/constants/dimens.dart';
+import 'package:ceyehat_app/core/constants/images.dart';
 import 'package:ceyehat_app/core/extensions/context_extension.dart';
+import 'package:ceyehat_app/presentation/components/button_x.dart';
 import 'package:ceyehat_app/presentation/screens/auth/view/login_view.dart';
 import 'package:flutter/material.dart';
 
@@ -9,34 +13,26 @@ class WelcomeView extends StatefulWidget {
   State<WelcomeView> createState() => _WelcomeViewState();
 }
 
-class _WelcomeViewState extends State<WelcomeView> {
+class _WelcomeViewState extends StateX<WelcomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          color: Colors.blueAccent,
-          image: DecorationImage(
-            image: AssetImage("assets/images/welcome_background.jpeg"),
-            fit: BoxFit.fitHeight
-          )
-        ),
-        child: Center(
-          child: Container(
-            alignment: Alignment.bottomCenter,
-            margin: const EdgeInsets.only(bottom: 160),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(fixedSize: const Size(300, 50)),
-              child: Text("Hoş geldiniz",
-                  style: Theme.of(context).textTheme.headline5?.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24)),
-              onPressed: () => context.push(const LoginView()),
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage(Images.welcomeBackground), fit: BoxFit.cover)),
+        child: Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.transparent, Colors.black45])),
+            padding: EdgeInsets.symmetric(vertical: Dimens.paddingPageVertical + mediaQuery.padding.bottom, horizontal: Dimens.paddingPageHorizontal),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: ButtonX(
+                text: localization.welcome,
+                minWidth: double.maxFinite,
+                trailing: const Icon(Icons.arrow_forward_rounded),
+                onTap: () => context.push(const LoginView()),
               ),
-            ),
-          ),
-        ),
-      );
+            )),
+      ),
+    );
   }
 }

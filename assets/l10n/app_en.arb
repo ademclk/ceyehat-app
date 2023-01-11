@@ -1,0 +1,16 @@
+{
+    "appName": "Ceyehat",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark",
+    "english": "English",
+    "turkish": "Turkish",
+    "somethingWentWrong": "Something went wrong!",
+    "welcome": "Welcome",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "emailValidationError": "Invalid email format",
+    "passwordValidationError": "Password must be at least 6 characters",
+    "wrongEmailOrPassword": "Email or password is wrong!"
+}
