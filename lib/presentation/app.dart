@@ -1,3 +1,4 @@
+import 'package:ceyehat_app/presentation/screens/auth/view/welcome_view.dart';
 import 'package:ceyehat_app/presentation/screens/navigation/view/navigation_view.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const NavigationView(),
+      home: const WelcomeView(),
       theme: ThemeData.light(),
     );
   }
