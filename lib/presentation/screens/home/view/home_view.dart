@@ -33,12 +33,12 @@ class _HomeViewState extends ConsumerState<HomeView> {
               const SearchView(),
               Expanded(
                   child: ListView.separated(
-                itemCount: 8,
-                separatorBuilder: (context, index) =>
+                    itemCount: 8,
+                    separatorBuilder: (context, index) =>
                     const SizedBox(height: 10),
-                itemBuilder: (context, index) {
-                  return const FlightListView();
-                },
+                    itemBuilder: (context, index) {
+                      return const FlightListView();
+                  },
               ))
             ],
           ),
