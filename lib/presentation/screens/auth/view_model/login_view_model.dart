@@ -22,16 +22,6 @@ class LoginViewModel extends BaseViewModel {
   }
 
   login() async {
-    if (!formKey.currentState!.validate()) return;
-
-    final result = await _authRepository.login(emailController.text, passwordController.text);
-
-    result.fold((l) {
-      if (!mounted) return;
-      context.showSnackBar(l.toLocalizedString(context));
-    }, (r) {
-      if (!mounted) return;
-      context.push(const NavigationView());
-    });
+    context.push(const NavigationView());
   }
 }

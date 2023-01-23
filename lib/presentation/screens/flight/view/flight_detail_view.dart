@@ -22,7 +22,7 @@ class _FlightDetailViewState extends State<FlightDetailView> {
                 style: Theme.of(context)
                     .textTheme
                     .headline4
-                    ?.copyWith(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "SF Pro Display", color: Colors.white))
+                    ?.copyWith(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "SF Pro Display", color: Colors.black))
           ],
         ),
       ),

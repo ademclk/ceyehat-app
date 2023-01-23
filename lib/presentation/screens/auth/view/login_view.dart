@@ -36,6 +36,7 @@ class _LoginViewState extends ConsumerStateX<LoginView> {
                   child: Form(
                     key: viewModel.formKey,
                     child: ListView(
+                      primary: false,
                       padding: const EdgeInsets.only(
                           left: Dimens.paddingPageHorizontal,
                           right: Dimens.paddingPageHorizontal,
@@ -45,7 +46,7 @@ class _LoginViewState extends ConsumerStateX<LoginView> {
                         SizedBox(
                           height: mediaQuery.size.height * .4,
                           child: Icon(
-                            Icons.lock_outline_rounded,
+                            Icons.person,
                             size: mediaQuery.size.height * .15,
                           ),
                         ),
