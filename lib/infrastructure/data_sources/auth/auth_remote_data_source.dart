@@ -7,8 +7,9 @@ import 'package:ceyehat_app/infrastructure/models/token_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-const _loginPath = 'auth/login';
-const _refreshTokenPath = 'auth/refresh';
+const _loginPath = 'api/auth/login';
+const _registerPath = 'api/auth/register';
+const _refreshTokenPath = 'api/auth/refresh';
 
 class AuthRemoteDataSource {
   const AuthRemoteDataSource(this._networkManager);
@@ -17,6 +18,11 @@ class AuthRemoteDataSource {
 
   Future<Either<LoginError, Token>> login(String email, String password) =>
       _networkManager.post(_loginPath, data: {'email': email, 'password': password}).then((res) => right(TokenModel.fromJson(res.data)),
+          onError: (e) =>
+              left<LoginError, Token>(LoginError(ErrorType.fromStatusCode((e as DioError).response?.statusCode), e.response.errorMessage)));
+
+  Future<Either<LoginError, Token>> register(String email, String password, String firstName, String lastName) =>
+      _networkManager.post(_registerPath, data: {'email': email, 'password': password, 'firstName': firstName, 'lastName': lastName}).then((res) => right(TokenModel.fromJson(res.data)),
           onError: (e) =>
               left<LoginError, Token>(LoginError(ErrorType.fromStatusCode((e as DioError).response?.statusCode), e.response.errorMessage)));
 

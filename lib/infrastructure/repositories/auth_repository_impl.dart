@@ -41,4 +41,14 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<void> logout() => _localDataSource.clearAuth();
+  
+  @override
+  Future<Either<BaseError<Token>, Token>> register(String email, String password, String firstName, String lastName) async {
+    final result = await _remoteDataSource.register(email, password, firstName, lastName);
+    
+    return result.map((r) {
+      _localDataSource.changeToken(r);
+      return r;
+    });
+  }
 }

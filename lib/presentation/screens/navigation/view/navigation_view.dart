@@ -1,3 +1,4 @@
+import 'package:ceyehat_app/presentation/screens/auth/view/register_view.dart';
 import 'package:ceyehat_app/presentation/screens/home/view/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -26,9 +27,7 @@ class _NavigationViewState extends State<NavigationView> {
           Container(
             color: Colors.green,
           ),
-          Container(
-            color: Colors.yellow,
-          )
+          const RegisterView(),
         ],
       ),
       bottomNavigationBar: AnimatedBuilder(
