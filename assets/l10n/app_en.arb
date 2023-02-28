@@ -25,5 +25,6 @@
     "emailAlreadyExists": "Email already exists!",
     "emailValidationError": "Invalid email format",
     "passwordValidationError": "Password must be at least 6 characters",
-    "wrongEmailOrPassword": "Email or password is wrong!"
+    "wrongEmailOrPassword": "Email or password is wrong!",
+    "bookAFlight": "Book a flight"
 }

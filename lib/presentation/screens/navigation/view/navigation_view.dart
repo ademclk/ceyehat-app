@@ -15,7 +15,7 @@ class _NavigationViewState extends State<NavigationView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
+      extendBody: false,
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
